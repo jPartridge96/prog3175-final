@@ -50,7 +50,7 @@ curl http://localhost:8080/api/getMovies
 
 **Example Response**
 
-The response should be a list of allstored movies in JSON format.
+The response should be a list of all stored movies in JSON format.
 ```json
 [
   {

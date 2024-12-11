@@ -28,7 +28,7 @@ app.put('/api/addMovie', (req, res) => {
 
 // Read
 app.get('/api/getMovies', (req, res) => {
-    res.sendFile(moviesDb);
+    res.json(movies);
 });
 
 app.get('/api/getMovie/:id', (req, res) => {
