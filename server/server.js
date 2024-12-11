@@ -36,6 +36,17 @@ app.get('/api/getMovie/:id', (req, res) => {
     res.json(movie);
 });
 
+// Update
+app.post('/api/updateMovie/:id', (req, res) => {
+    const movie = getMovieById(req.params.id);
+    const updatedMovie = req.body;
+
+    Object.assign(movie, updatedMovie);
+    saveMovies();
+
+    res.json(movie);
+});
+
 //#endregion
 
 app.listen(PORT, () => {

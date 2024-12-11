@@ -25,7 +25,7 @@ curl -X POST http://localhost:8080/api/addMovie \
 ```
 
 **Expected Response**
-The response should be the movie you'e adding in JSON format. Please note the Id assigned to the movie.
+The response should be the movie you're adding in JSON format. Please note the Id assigned to the movie.
 ```json
 {
     "id": 4,
@@ -34,7 +34,7 @@ The response should be the movie you'e adding in JSON format. Please note the Id
     "year": 2013
 }
 ```
-<sub>*Output formatted for reaability*</sub>
+<sub>*Output formatted for readability*</sub>
 
 ---
 
@@ -71,7 +71,7 @@ The response should be a list of allstored movies in JSON format.
   }
 ]
 ```
-<sub>*Output formatted for reaability*</sub>
+<sub>*Output formatted for readability*</sub>
 
 ###### `/api/getMovie/{id}` Get Movie by Id
 
@@ -91,7 +91,36 @@ curl http://localhost:8080/api/getMovie/1
   "year": 1999
 }
 ```
-<sub>*Output formatted for reaability*</sub>
+<sub>*Output formatted for readability*</sub>
+
+---
+
+#### Update
+###### `/api/updateMovie/{id}` Update a Movie 
+
+**Example Request**
+To query this example on a local server from a terminal:
+```bash
+curl -X POST http://localhost:8080/api/updateMovie/1 \
+-H "Content-Type: application/json" \
+-d '{
+    "title": "Sharknado",
+    "genre": "Biography",
+    "year": 2013
+}'
+```
+
+**Expected Response**
+The response should be the movie you've updated in JSON format.
+```json
+{
+    "id": 4,
+    "title": "Sharknado",
+    "genre": "Biography",
+    "year": 2013
+}
+```
+<sub>*Output formatted for readability*</sub>
 
 ---
 
