@@ -14,11 +14,19 @@ app.get('/', (req, res) => {
 });
 
 //#region CRUD Endpoints
+
+// Create
 app.post('/api/addMovie', (req, res) => {
     const movie = req.body;
-    res.send(movie);
+    movie.id = movies.length + 1;
+    
+    movies.push(movie);
+    saveMovies();
+
+    res.json(movie);
 });
 
+// Read
 app.get('/api/getMovies', (req, res) => {
     res.sendFile(moviesDb);
 });
@@ -27,6 +35,7 @@ app.get('/api/getMovie/:id', (req, res) => {
     const movie = getMovieById(req.params.id);
     res.json(movie);
 });
+
 //#endregion
 
 app.listen(PORT, () => {
@@ -34,6 +43,7 @@ app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
 
+//#region Helper Functions
 function getMovieById(id) {
     return movies.find(movie => movie.id == id);
 }
@@ -49,3 +59,15 @@ function loadMovies() {
         console.log(`Loaded ${movies.length} movies from ${moviesDb}`);
     });
 }
+
+function saveMovies() {
+    fs.writeFile(moviesDb, JSON.stringify(movies), (err) => {
+        if (err) {
+            console.error('Error writing file:', err);
+            return;
+        }
+
+        console.log(`Saved ${movies.length} movies to ${moviesDb}`);
+    });
+}
+//#endregion
