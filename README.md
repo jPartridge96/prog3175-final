@@ -86,6 +86,7 @@ curl http://localhost:8080/api/getMovie/1
 
 **Example Response**
 
+The response should be the movie you've requested in JSON format.
 ```json
 {
   "id": 1,
