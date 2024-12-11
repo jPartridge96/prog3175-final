@@ -14,7 +14,7 @@ To start the server, navigate to the server folder in a terminal and type the co
 
 To query this example on a local server from a terminal:
 ```bash
-curl -X POST http://localhost:8080/api/addMovie \
+curl -X PUT http://localhost:8080/api/addMovie \
 -H "Content-Type: application/json" \
 -d '{
     "title": "Sharknado",

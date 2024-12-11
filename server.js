@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 //#region CRUD Endpoints
 
 // Create
-app.post('/api/addMovie', (req, res) => {
+app.put('/api/addMovie', (req, res) => {
     const movie = req.body;
     movie.id = movies.length + 1;
     
