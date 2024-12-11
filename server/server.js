@@ -47,6 +47,16 @@ app.post('/api/updateMovie/:id', (req, res) => {
     res.json(movie);
 });
 
+// Delete
+app.delete('/api/deleteMovie/:id', (req, res) => {
+    const movie = getMovieById(req.params.id);
+    
+    movies = movies.filter(m => m.id != req.params.id);
+    saveMovies();
+
+    res.json(movie);
+});
+
 //#endregion
 
 app.listen(PORT, () => {
