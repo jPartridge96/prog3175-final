@@ -4,7 +4,7 @@ const fs = require('fs');
 const app = express();
 const PORT = 8080;
 
-const moviesDb = __dirname + '/data/movies.json';
+const moviesDb = __dirname + '/movies.json';
 var movies;
 
 app.use(express.json());
