@@ -1,5 +1,7 @@
 # PROG3175 Final
 
+This Node.js REST API server provides CRUD operations for managing a movie database. It allows users to Create, Read, Update, and Delete movie entries through HTTP endpoints. Each movie entry contains an ID, title, genre, and release year. The data is persisted in a JSON file.
+
 ## Start the Server
 To start the server, navigate to the server folder in a terminal and type the command `npm start`. All [dependencies](#dependencies) will be updated or installed automatically and the server should work out of the box.
 
@@ -157,3 +159,12 @@ The response should be the movie you've deleted in JSON format.
 
 ## Dependencies
 The server requires `express` and `nodemon`, which are both automatically installed when you run the server. To install them manually, naviate to the server folder in a terminal and use the command `npm install`.
+
+---
+
+## License
+This project uses the GNU General Public License v3.0 to ensure that the software remains free and open source. The GPL license was chosen because it:
+1. Guarantees users the freedom to run, study, share, and modify the software
+2. Ensures that derivative works must also remain open source
+3. Provides strong copyleft protection
+4. Is widely used in the open source community and compatible with many other licenses
